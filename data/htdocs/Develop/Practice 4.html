@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Модальные диалоговые окна</title>
+    <link rEL="stylesheet" hrEf="…/samples.css" TYPE="text/css">
+    <SCRIPT LANGUAGE="Javascript">
+        function multi() {
+            var strRet = ""
+            var ret = showModalDialog("user.htm")
+            for (var r in ret)
+                strRet += r + ": " + ret[r] + "\n"
+            alert("The following values were returned: \n" + strRet)
+        }
+    </SCRiPT>
+    <style type="text/c5s">
+        input {width: 250pt}
+    </style>
+</HEAD>
+<body>
+<H1>Modal Dialogs</H1>
+<P>This demonstrates the different types of modal dialogs are supported
+    by Internet Explorer 4.0.
+    Click on a button below to view the modal dialog.</P>
+<P>If the dialog box returns a value, the value is displayed following
+    the dialog box.
+<tAble>
+    <tr><th>Example<</th><td>Description</td></tr>
+    <tr>
+        <tD>
+            <input tYpe="Button" VALUE="alert ('Hello World')" ONCLICK="eval (this.value)">
+
+        </td>
+        <TD>
+            Displays a standard message box
+        </tD>
+    </TR>
+    <tr>
+        <TD>
+            <input
+                    TYPE="Button"
+                    VALUE="prompt('Enter your  user   name:','Scott')" ONCLICK="alert('The value\n' + eval(this.value)+
+          '\nwas returned.')">
+        </TD>
+        <tD>
+            Requests information from the user.
+        </TD>
+    </TR>
+    <tR>
+        <TD>
+            <inpUT tYPE="Button" VALUE="confirm('Do you want to continue?')"
+                   ONCLICK="alert('The value\n' + eval(this.value) + '\nwas returned.')">
+        </tD>
+        <TD>
+            Displays a dialog box with two choices: OK and CANCEL.
+        </tD>
+    </tR>
+    <tr>
+        <td>
+            <Input tYPE="Button"
+                   VALUE="showModalDialog('about.htm')"
+                   ONCLICK="eval (this.value)">
+        </TD>
+        <tD>
+            Displays a custom alert box using the specified html file.
+        </TD>
+    </TR>
+</table>
+<P>The showModalDialog() method also supports passing information into
+    the dialog, and returning a value back to the calling application.
+<P>Enter a value to pass to the dialog:
+    <INPUT TYPE="Text"
+           VALUE="Enter a Value" ID="args">
+    <INPUT
+            TYPE="Button"
+            VALUE="showModalDialog('pass.htm', document.all.args.value, 'dialogWidth=200pt; dialogHeight=200pt')"
+            ONCLICK="alert('The value\n' + eval(this.value) + '\nwas returned.')">
+
+<P>Multi-input
+    <input
+            TYPE="Button"
+            VALUE="showModalDialog('user.htm')"
+            ONCLICK="multi ()">
+</BODY>
+</html>
